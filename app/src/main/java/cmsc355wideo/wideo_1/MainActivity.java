@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
         Button button_gallery = (Button) findViewById(R.id.button2);
         Button button_settings = (Button) findViewById(R.id.button3);
         Button button_quit = (Button) findViewById(R.id.button4);
-
+        Button button_friends = (Button) findViewById(R.id.button5);
         button_quit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

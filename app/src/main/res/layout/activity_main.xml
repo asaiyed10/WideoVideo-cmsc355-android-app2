@@ -18,35 +18,8 @@
             android:id="@+id/button"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
-            android:text="@string/record"/>
-
-        <Button
-            android:layout_width="250dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="52dp"
-            android:id="@+id/button2"
-            android:layout_below="@+id/button"
-            android:layout_centerHorizontal="true"
-            android:text="@string/gallery"/>
-
-        <Button
-            android:layout_width="250dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="37dp"
-            android:id="@+id/button3"
-            android:layout_below="@+id/button2"
-            android:layout_alignLeft="@+id/button2"
-            android:layout_alignStart="@+id/button2"
-            android:text="@string/settings"/>
-        <Button
-            android:layout_width="250dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="37dp"
-            android:id="@+id/button4"
-            android:layout_below="@+id/button3"
-            android:layout_alignLeft="@+id/button2"
-            android:layout_alignStart="@+id/button2"
-            android:text="@string/quit"/>
+            android:background="@drawable/camerabutton"
+            />
 
     <TextView
         android:id="@+id/my_group_name"
@@ -56,6 +29,42 @@
         android:layout_alignParentBottom="true"
         android:layout_alignLeft="@+id/button"
         android:layout_alignStart="@+id/button" />
+
+    <Button
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:id="@+id/button2"
+        android:text="@string/gallery"
+        android:layout_below="@+id/button"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/button3"
+        android:text="@string/settings"
+        android:layout_below="@+id/button2"
+        android:layout_alignLeft="@+id/button2"
+        android:layout_alignStart="@+id/button2" />
+
+    <Button
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/button5"
+        android:text="@string/friend_list"
+        android:layout_below="@+id/button3"
+        android:layout_alignLeft="@+id/button4"
+        android:layout_alignStart="@+id/button4" />
+
+    <Button
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+        android:id="@+id/button4"
+        android:text="@string/quit"
+        android:layout_below="@+id/button5"
+        android:layout_alignLeft="@+id/button3"
+        android:layout_alignStart="@+id/button3" />
 
 
 </RelativeLayout>
