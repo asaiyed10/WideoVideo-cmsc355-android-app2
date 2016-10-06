@@ -1,5 +1,6 @@
 package cmsc355wideo.wideo_1;
 
+import android.support.test.espresso.ViewAssertion;
 import android.support.test.espresso.ViewInteraction;
 import android.test.ActivityInstrumentationTestCase2;
 import android.view.View;
@@ -24,157 +25,93 @@ public class EspressoTest extends ActivityInstrumentationTestCase2<MainActivity>
         super(MainActivity.class);
     }
 
+    private static Matcher<View> childAtPosition(
+            final Matcher<View> parentMatcher, final int position) {
+
+        return new TypeSafeMatcher<View>() {
+            @Override
+            public void describeTo(Description description) {
+                description.appendText("Child at position " + position + " in parent ");
+                parentMatcher.describeTo(description);
+            }
+
+            @Override
+            public boolean matchesSafely(View view) {
+                ViewParent parent = view.getParent();
+                return parent instanceof ViewGroup && parentMatcher.matches(parent)
+                        && view.equals(((ViewGroup) parent).getChildAt(position));
+            }
+        };
+    }
+
     public void setUp() throws Exception {
         super.setUp();
         getActivity();
     }
 
-    public void testRecordButtonIsDisplayed() {
-        onView(withId(R.id.button))
-                .check(matches(isDisplayed()));
-    }
-
-    public void testGalleryButtonIsDisplayed() {
-        onView(withId(R.id.button2))
-                .check(matches(isDisplayed()));
-    }
-
-    public void testSettingsButtonIsDisplayed() {
-        onView(withId(R.id.button3))
-                .check(matches(isDisplayed()));
-    }
-
-    public void testFriendlistButtonIsDisplayed() {
-        onView(withId(R.id.button5))
-                .check(matches(isDisplayed()));
-    }
-
-    public void testQuitButtonIsDisplayed() {
-        onView(withId(R.id.button4))
-                .check(matches(isDisplayed()));
-    }
     public void mainActivityTest() {
-        ViewInteraction button = onView(
-                allOf(withId(R.id.button2),
+        testButtonsDisplay(matches(isDisplayed()), allOf(withId(R.id.button),
+                childAtPosition(
                         childAtPosition(
-                                childAtPosition(
-                                        withId(android.R.id.content),
-                                        0),
-                                1),
-                        isDisplayed()));
-        button.check(matches(isDisplayed()));
-
-        ViewInteraction button2 = onView(
-                allOf(withId(R.id.button),
-                        childAtPosition(
-                                childAtPosition(
-                                        withId(android.R.id.content),
-                                        0),
+                                withId(android.R.id.content),
                                 0),
-                        isDisplayed()));
-        button2.check(matches(isDisplayed()));
-
-        ViewInteraction button3 = onView(
-                allOf(withId(R.id.button3),
+                        0),
+                isDisplayed()), allOf(withId(R.id.button3),
+                childAtPosition(
                         childAtPosition(
-                                childAtPosition(
-                                        withId(android.R.id.content),
-                                        0),
-                                2),
-                        isDisplayed()));
-        button3.check(matches(isDisplayed()));
+                                withId(android.R.id.content),
+                                0),
+                        2),
+                isDisplayed()), allOf(withId(R.id.button5),
+                childAtPosition(
+                        childAtPosition(
+                                withId(android.R.id.content),
+                                0),
+                        3),
+                isDisplayed()), allOf(withId(R.id.button4),
+                childAtPosition(
+                        childAtPosition(
+                                withId(android.R.id.content),
+                                0),
+                        4),
+                isDisplayed()));
 
-        ViewInteraction button4 = onView(
-                allOf(withId(R.id.button5),
+
+        testButtonsDisplay(doesNotExist(), allOf(withId(R.id.button3),
+                childAtPosition(
+                        childAtPosition(
+                                withId(android.R.id.content),
+                                0),
+                        2),
+                isDisplayed()), allOf(withId(R.id.button5),
                         childAtPosition(
                                 childAtPosition(
                                         withId(android.R.id.content),
                                         0),
                                 3),
-                        isDisplayed()));
-        button4.check(matches(isDisplayed()));
-
-        ViewInteraction button5 = onView(
-                allOf(withId(R.id.button4),
-                        childAtPosition(
+                isDisplayed()), allOf(withId(R.id.button4),
                                 childAtPosition(
-                                        withId(android.R.id.content),
-                                        0),
-                                4),
-                        isDisplayed()));
-        button5.check(matches(isDisplayed()));
-
-        ViewInteraction textView = onView(
-                allOf(withId(R.id.my_group_name), withText("CMSC355 Wideo Group"),
-                        childAtPosition(
-                                childAtPosition(
-                                        withId(android.R.id.content),
-                                        0),
-                                5),
-                        isDisplayed()));
-        textView.check(matches(withText("CMSC355 Wideo Group")));
-
-        ViewInteraction button6 = onView(
-                allOf(withId(R.id.button2),
-                        childAtPosition(
-                                childAtPosition(
-                                        withId(android.R.id.content),
-                                        0),
-                                1),
-                        isDisplayed()));
-        button6.check(doesNotExist());
-
-        ViewInteraction button7 = onView(
-                allOf(withId(R.id.button3),
-                        childAtPosition(
-                                childAtPosition(
-                                        withId(android.R.id.content),
-                                        0),
-                                2),
-                        isDisplayed()));
-        button7.check(doesNotExist());
-
-        ViewInteraction button8 = onView(
-                allOf(withId(R.id.button5),
-                        childAtPosition(
-                                childAtPosition(
-                                        withId(android.R.id.content),
-                                        0),
-                                3),
-                        isDisplayed()));
-        button8.check(doesNotExist());
-
-        ViewInteraction button9 = onView(
-                allOf(withId(R.id.button4),
-                        childAtPosition(
-                                childAtPosition(
-                                        withId(android.R.id.content),
-                                        0),
-                                4),
-                        isDisplayed()));
-        button9.check(doesNotExist());
-
-        ViewInteraction button10 = onView(
-                allOf(withId(R.id.button),
-                        childAtPosition(
-                                childAtPosition(
-                                        withId(android.R.id.content),
-                                        0),
-                                0),
-                        isDisplayed()));
-        button10.check(doesNotExist());
-
-        ViewInteraction textView2 = onView(
-                allOf(withText("Wideo-1"),
-                        childAtPosition(
-                                allOf(withId(R.id.action_bar),
                                         childAtPosition(
-                                                withId(R.id.action_bar_container),
-                                                0)),
+                                                withId(android.R.id.content),
+                                                0),
+                                        4),
+                isDisplayed()), allOf(withId(R.id.button),
+                childAtPosition(
+                        childAtPosition(
+                                withId(android.R.id.content),
                                 0),
-                        isDisplayed()));
-        textView2.check(matches(withText("Wideo-1")));
+                        0),
+                isDisplayed()));
 
+        testTextBeingDisplayed();
+
+
+        testPositioningOfGraphics();
+
+
+    }
+
+    private void testPositioningOfGraphics() {
         ViewInteraction viewGroup = onView(
                 allOf(withId(R.id.action_bar),
                         childAtPosition(
@@ -216,7 +153,29 @@ public class EspressoTest extends ActivityInstrumentationTestCase2<MainActivity>
                                 0),
                         isDisplayed()));
         viewGroup2.check(doesNotExist());
+    }
 
+    private void testTextBeingDisplayed() {
+        ViewInteraction textView2 = onView(
+                allOf(withText("Wideo-1"),
+                        childAtPosition(
+                                allOf(withId(R.id.action_bar),
+                                        childAtPosition(
+                                                withId(R.id.action_bar_container),
+                                                0)),
+                                0),
+                        isDisplayed()));
+        textView2.check(matches(withText("Wideo-1")));
+
+        ViewInteraction textView = onView(
+                allOf(withId(R.id.my_group_name), withText("CMSC355 Wideo Group"),
+                        childAtPosition(
+                                childAtPosition(
+                                        withId(android.R.id.content),
+                                        0),
+                                5),
+                        isDisplayed()));
+        textView.check(matches(withText("CMSC355 Wideo Group")));
         ViewInteraction textView3 = onView(
                 allOf(withText("Wideo-1"),
                         childAtPosition(
@@ -238,25 +197,33 @@ public class EspressoTest extends ActivityInstrumentationTestCase2<MainActivity>
                                 0),
                         isDisplayed()));
         textView4.check(doesNotExist());
-
     }
 
-    private static Matcher<View> childAtPosition(
-            final Matcher<View> parentMatcher, final int position) {
+    private void testButtonsDisplay(ViewAssertion matches, Matcher<View> viewMatcher2, Matcher<View> viewMatcher3, Matcher<View> viewMatcher4, Matcher<View> viewMatcher5) {
+        ViewInteraction button = onView(
+                allOf(withId(R.id.button2),
+                        childAtPosition(
+                                childAtPosition(
+                                        withId(android.R.id.content),
+                                        0),
+                                1),
+                        isDisplayed()));
+        button.check(matches);
 
-        return new TypeSafeMatcher<View>() {
-            @Override
-            public void describeTo(Description description) {
-                description.appendText("Child at position " + position + " in parent ");
-                parentMatcher.describeTo(description);
-            }
+        ViewInteraction button2 = onView(
+                viewMatcher2);
+        button2.check(matches);
 
-            @Override
-            public boolean matchesSafely(View view) {
-                ViewParent parent = view.getParent();
-                return parent instanceof ViewGroup && parentMatcher.matches(parent)
-                        && view.equals(((ViewGroup) parent).getChildAt(position));
-            }
-        };
+        ViewInteraction button3 = onView(
+                viewMatcher3);
+        button3.check(matches);
+
+        ViewInteraction button4 = onView(
+                viewMatcher4);
+        button4.check(matches);
+
+        ViewInteraction button5 = onView(
+                viewMatcher5);
+        button5.check(matches);
     }
 }
