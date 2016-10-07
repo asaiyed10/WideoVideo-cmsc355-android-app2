@@ -33,12 +33,12 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        button_friends.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent flist = new Intent(Intent.ACTION_PICK, ContactsContract.Contacts.CONTENT_URI);
-                startActivity(flist);
-            }
+        button_friends.setOnClickListener(new View.OnClickListener(){
+                @Override
+               public void onClick(View v){
+                       Intent flist = new Intent(Intent.ACTION_PICK, ContactsContract.Contacts.CONTENT_URI);
+                        startActivity(flist);
+                   }
         });
 
 

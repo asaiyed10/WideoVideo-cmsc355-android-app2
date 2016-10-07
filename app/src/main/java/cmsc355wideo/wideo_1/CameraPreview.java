@@ -10,9 +10,6 @@ import java.io.IOException;
 
 import static android.content.ContentValues.TAG;
 
-/**
- * Created by mantvu on 9/28/2016.
- */
 
 public class CameraPreview extends SurfaceView implements SurfaceHolder.Callback  {
     private SurfaceHolder mHolder;
