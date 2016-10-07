@@ -24,13 +24,20 @@ public class MainActivity extends AppCompatActivity {
                 System.exit(0);
             }
         });
-        button_record.setOnClickListener(new View.OnClickListener(){
+        button_record.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v){
+            public void onClick(View v) {
                 Intent camera = new Intent(MainActivity.this, CameraActivity.class);
                 startActivity(camera);
             }
-        });
-    }
+        });}
 
+
+    public void onClick(View v) {
+        Intent contacts = new Intent(MainActivity.this, Contacts.class);
+        startActivity(contacts);
+    }
 }
+
+
+
