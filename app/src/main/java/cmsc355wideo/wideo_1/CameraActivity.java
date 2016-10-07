@@ -5,9 +5,7 @@ import android.hardware.Camera;
 import android.os.Bundle;
 import android.widget.FrameLayout;
 
-/**
- * Created by mantvu on 9/28/2016.
- */
+
 
 public class CameraActivity extends Activity {
     private Camera mCamera;
@@ -34,4 +32,15 @@ public class CameraActivity extends Activity {
         }
         return c;
     }
+    public void onPause(){
+        super.onPause();
+        cameraRelease();
+    }
+    private void cameraRelease(){
+         if (mCamera != null){
+             mCamera.release();
+             mCamera = null;
+             }
+         }
+
 }
