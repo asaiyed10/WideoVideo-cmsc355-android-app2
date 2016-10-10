@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app=" "
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -9,17 +10,6 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="cmsc355wideo.wideo_1.MainActivity">
 
-
-
-        <Button
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:layout_marginTop="71dp"
-            android:id="@+id/button"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:background="@drawable/camerabutton"
-            />
 
     <TextView
         android:id="@+id/my_group_name"
@@ -62,9 +52,19 @@
             android:layout_height="wrap_content"
         android:id="@+id/button4"
         android:text="@string/quit"
-        android:layout_below="@+id/button5"
+        android:layout_above="@+id/my_group_name"
         android:layout_alignLeft="@+id/button3"
         android:layout_alignStart="@+id/button3" />
+
+
+    <Button
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:id="@+id/button"
+        android:background="@drawable/camerabutton"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="55dp" />
 
 
 </RelativeLayout>
