@@ -2,7 +2,6 @@ package cmsc355wideo.wideo_1;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.provider.ContactsContract;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
@@ -31,17 +30,20 @@ public class MainActivity extends AppCompatActivity {
                 Intent camera = new Intent(MainActivity.this, CameraActivity.class);
                 startActivity(camera);
             }
-        });
+        });}
+    
+    button_friends.setOnClickListener(new View.OnClickListener(){
+    @Override
+    public void onClick(View v){
+        Intent flist = new Intent(Intent.ACTION_PICK, ContactsContract.Contacts.CONTENT_URI);
+        startActivity(flist);
+    }
+    });
 
-        button_friends.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent flist = new Intent(Intent.ACTION_PICK, ContactsContract.Contacts.CONTENT_URI);
-                startActivity(flist);
-            }
-        });
 
-
+    public void onClick(View v) {
+        Intent contacts = new Intent(MainActivity.this, Contacts.class);
+        startActivity(contacts);
     }
 }
 
