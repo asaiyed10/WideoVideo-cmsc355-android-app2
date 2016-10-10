@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="cmsc355wideo.wideo_1">
-    <uses-sdk android:minSdkVersion="15"
-              android:targetSdkVersion="21"/>
 
     <uses-feature android:name="android.hardware.camera" />
 
@@ -12,7 +10,6 @@
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
     <uses-permission android:name="android.permission.READ_CONTACTS"/>
-
 
     <application
         android:allowBackup="true"
@@ -37,6 +34,14 @@
             </intent-filter>
 
         </activity>
+        <activity android:name=".settings"
+            android:label="Settings">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
     </application>
 
 </manifest>

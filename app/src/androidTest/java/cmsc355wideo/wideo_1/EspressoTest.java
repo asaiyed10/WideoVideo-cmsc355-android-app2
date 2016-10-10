@@ -2,8 +2,13 @@ package cmsc355wideo.wideo_1;
 
 import android.test.ActivityInstrumentationTestCase2;
 
+import org.junit.Test;
+
 import static android.support.test.espresso.Espresso.onView;
+import static android.support.test.espresso.action.ViewActions.click;
 import static android.support.test.espresso.assertion.ViewAssertions.matches;
+import static android.support.test.espresso.intent.Intents.intended;
+import static android.support.test.espresso.intent.matcher.IntentMatchers.toPackage;
 import static android.support.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static android.support.test.espresso.matcher.ViewMatchers.withId;
 import static android.support.test.espresso.matcher.ViewMatchers.withText;
@@ -20,7 +25,6 @@ public class EspressoTest extends ActivityInstrumentationTestCase2<MainActivity>
     public void testRecordButtonIsDisplayed(){
         onView(withId(R.id.button))
                 .check(matches(isDisplayed()));
-        System.out.println("hello gallery");
     }
     public void testGalleryButtonIsDisplayed(){
         onView(withId(R.id.button2))
@@ -63,5 +67,6 @@ public class EspressoTest extends ActivityInstrumentationTestCase2<MainActivity>
         onView(withId(R.id.button4))
                 .check(matches(withText("Exit")));
     }
+
 
 }

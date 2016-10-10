@@ -1,5 +1,6 @@
 package cmsc355wideo.wideo_1;
 
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.provider.ContactsContract;
@@ -8,7 +9,6 @@ import android.view.View;
 import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,12 +37,26 @@ public class MainActivity extends AppCompatActivity {
                 @Override
                public void onClick(View v){
                        Intent flist = new Intent(Intent.ACTION_PICK, ContactsContract.Contacts.CONTENT_URI);
-                        startActivity(flist);
+                       startActivity(flist);
                    }
         });
-
+        button_gallery.setOnClickListener(new View.OnClickListener(){
+                public void onClick(View v){
+                    Intent gallery = new Intent(Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+                    startActivity(gallery);
+                }
+        });
+        button_settings.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent settings = new Intent(MainActivity.this, settings.class);
+                startActivity(settings);
+            }
+        });
 
     }
+
+
 }
 
 

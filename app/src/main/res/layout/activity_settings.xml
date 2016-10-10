@@ -20,36 +20,39 @@
     <Button
         android:layout_width="250dp"
         android:layout_height="wrap_content"
+        android:id="@+id/buttons"
+        android:text="storage"
+        android:layout_below="@+id/buttonf"
+        android:layout_alignLeft="@+id/buttonf"
+        android:layout_alignStart="@+id/buttonf"
+        android:layout_marginTop="15dp" />
+
+    <Button
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
         android:id="@+id/buttonf"
         android:text="flash"
         android:layout_below="@+id/buttonq"
         android:layout_alignLeft="@+id/buttonq"
-        android:layout_alignStart="@+id/buttonq" />
-
-    <Button
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:id="@+id/buttons"
-        android:text="storage"
-        android:layout_below="@+id/buttonf"
-        android:layout_alignLeft="@+id/buttonq"
-        android:layout_alignStart="@+id/buttonq" />
-
-    <Button
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:id="@+id/buttonv"
-        android:text="voice recognition"
-        android:layout_below="@+id/buttons"
-        android:layout_alignLeft="@+id/buttonq"
-        android:layout_alignStart="@+id/buttonq" />
+        android:layout_alignStart="@+id/buttonq"
+        android:layout_marginTop="24dp" />
 
     <Button
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:id="@+id/buttona"
         android:text="about us"
-        android:layout_below="@+id/buttons"
+        android:layout_marginTop="16dp"
+        android:layout_below="@+id/buttonv"
+        android:layout_alignLeft="@+id/buttonv"
+        android:layout_alignStart="@+id/buttonv" />
+
+    <Button
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/buttonv"
+        android:text="voice recognition"
+        android:layout_centerVertical="true"
         android:layout_alignLeft="@+id/buttons"
         android:layout_alignStart="@+id/buttons" />
 </RelativeLayout>

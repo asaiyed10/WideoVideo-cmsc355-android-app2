@@ -22,7 +22,10 @@ public class CameraActivity extends Activity {
         preview.addView(mPreview);
 
     }
-
+    public void onPause(){
+        super.onPause();
+        cameraRelease();
+    }
     public static Camera getCameraInstance() {
         Camera c = null;
         try {
@@ -31,10 +34,6 @@ public class CameraActivity extends Activity {
             e.printStackTrace();
         }
         return c;
-    }
-    public void onPause(){
-        super.onPause();
-        cameraRelease();
     }
     private void cameraRelease(){
          if (mCamera != null){
