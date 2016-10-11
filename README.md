@@ -3,4 +3,6 @@
 
 -The camera activity (the activity linked to Record button) works best with API 21. The Nexus 5X API 24 (Nougat) couldn't even open its built in camera so it wouldn't work with this app.
 
+-The settings activity doesn't change the camera's values yet. It contains the buttons for now.
+
 -The Espresso tests should be run individually. When bundled together, they don't run very well (may be it only happens on my emulator).
