@@ -17,5 +17,14 @@ public class settings extends AppCompatActivity {
         Button button_voicerecognition = (Button) findViewById(R.id.buttonv);
         Button button_about_us = (Button) findViewById(R.id.buttona);
 
+        button_quality.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                                Intent quality = new Intent(MainActivity.this, settings.class);
+                                startActivity(quality);
+                            }
+                    });
+
+
     }
 }

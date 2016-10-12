@@ -60,7 +60,7 @@ public class SettingsTest extends ActivityInstrumentationTestCase2<settings> {
 
     public void testQualityIsCorrectText(){
         onView(withId(R.id.buttonq))
-                .check(matches(withText("quality")));
+                .check(matches(withText("cmsc355wideo.wideo_1.quality")));
     }
     public void testStorageIsCorrectText(){
         onView(withId(R.id.buttons))
