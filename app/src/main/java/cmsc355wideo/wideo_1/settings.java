@@ -1,7 +1,9 @@
 package cmsc355wideo.wideo_1;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 
 
@@ -20,7 +22,7 @@ public class settings extends AppCompatActivity {
         button_quality.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-                                Intent quality = new Intent(MainActivity.this, settings.class);
+                                Intent quality = new Intent(settings.this, quality.class);
                                 startActivity(quality);
                             }
                     });
