@@ -26,6 +26,14 @@ public class settings extends AppCompatActivity {
                                 startActivity(quality);
                             }
                     });
+        button_quality.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent flash = new Intent(settings.this, Flash.class);
+                startActivity(flash);
+            }
+        });
+
 
 
     }

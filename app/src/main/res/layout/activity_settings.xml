@@ -7,7 +7,8 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="cmsc355wideo.wideo_1.settings">
+    tools:context="cmsc355wideo.wideo_1.settings"
+    tools:ignore="ExtraText">
     <Button
         android:layout_width="250dp"
         android:layout_height="wrap_content"
@@ -55,4 +56,7 @@
         android:layout_centerVertical="true"
         android:layout_alignLeft="@+id/buttons"
         android:layout_alignStart="@+id/buttons" />
+
+
+
 </RelativeLayout>

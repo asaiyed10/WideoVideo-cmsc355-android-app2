@@ -7,6 +7,7 @@
     <string name="quit">Exit</string>
     <string name="friend_list">Friend List</string>
     <string name="title_activity_quality">quality</string>
+    <string name="title_activity_flash">Flash</string>
 
 
 </resources>
