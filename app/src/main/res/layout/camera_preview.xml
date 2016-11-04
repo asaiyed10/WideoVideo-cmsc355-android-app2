@@ -12,6 +12,15 @@
         android:layout_weight="1"
 
     />
+
+    <Button
+        android:text="Stop"
+        android:layout_width="92dp"
+        android:layout_height="94dp"
+        android:id="@+id/button_stop"
+        android:visibility="gone"
+        android:layout_gravity="center"/>
+
     <Button
         android:id="@+id/button_capture"
         android:background="@drawable/recordbutton"

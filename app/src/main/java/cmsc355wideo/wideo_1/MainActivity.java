@@ -1,14 +1,11 @@
 package cmsc355wideo.wideo_1;
 
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
-
-import com.google.android.gms.appindexing.Action;
 import com.google.android.gms.appindexing.AppIndex;
 import com.google.android.gms.common.api.GoogleApiClient;
 
@@ -24,42 +21,44 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Button button_record = (Button) findViewById(R.id.button);
-        Button button_gallery = (Button) findViewById(R.id.button2);
-        Button button_settings = (Button) findViewById(R.id.button3);
-        Button button_quit = (Button) findViewById(R.id.button4);
-        Button button_friends = (Button) findViewById(R.id.button5);
-        button_quit.setOnClickListener(new View.OnClickListener() {
+        Button buttonRecord = (Button) findViewById(R.id.button);
+        Button buttonGallery = (Button) findViewById(R.id.button2);
+        Button buttonSettings = (Button) findViewById(R.id.button3);
+        Button buttonQuit = (Button) findViewById(R.id.button4);
+        Button buttonFriends = (Button) findViewById(R.id.button5);
+        buttonQuit.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View view) {
                 finish();
                 System.exit(0);
             }
         });
-        button_record.setOnClickListener(new View.OnClickListener() {
+        buttonRecord.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View view) {
                 Intent camera = new Intent(MainActivity.this, CameraActivity.class);
                 startActivity(camera);
             }
         });
-        button_friends.setOnClickListener(new View.OnClickListener() {
+        buttonFriends.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                Intent flist = new Intent(Intent.ACTION_PICK, ContactsContract.Contacts.CONTENT_URI);
+            public void onClick(View view) {
+                Intent flist = new Intent(Intent.ACTION_PICK,
+                        ContactsContract.Contacts.CONTENT_URI);
                 startActivity(flist);
                 }
         });
-        button_gallery.setOnClickListener(new View.OnClickListener() {
+        buttonGallery.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                Intent gallery = new Intent(Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+            public void onClick(View view) {
+                Intent gallery = new Intent(Intent.ACTION_PICK,
+                        android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
                 startActivity(gallery);
             }
         });
-        button_settings.setOnClickListener(new View.OnClickListener() {
+        buttonSettings.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View view) {
                 Intent settings = new Intent(MainActivity.this, settings.class);
                 startActivity(settings);
             }
