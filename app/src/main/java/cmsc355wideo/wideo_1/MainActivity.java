@@ -1,8 +1,10 @@
 package cmsc355wideo.wideo_1;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.provider.ContactsContract;
+import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
@@ -16,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
      * See https://g.co/AppIndexing/AndroidStudio for more information.
      */
     private GoogleApiClient client;
-
+    public static final int PICK_ACTION = 1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,11 +51,13 @@ public class MainActivity extends AppCompatActivity {
                 }
         });
         buttonGallery.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP_MR1)
             @Override
             public void onClick(View view) {
-                Intent gallery = new Intent(Intent.ACTION_PICK,
-                        android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-                startActivity(gallery);
+                Intent gallery = new Intent();
+                gallery.setType("image/*");
+                gallery.setAction(Intent.ACTION_GET_CONTENT);
+                startActivityForResult(Intent.createChooser(gallery,"Select"),PICK_ACTION);
             }
         });
         buttonSettings.setOnClickListener(new View.OnClickListener() {

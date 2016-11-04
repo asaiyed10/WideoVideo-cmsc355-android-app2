@@ -125,8 +125,11 @@ public class CameraActivity extends Activity {
         myMediaRecorder.setVideoSource(MediaRecorder.VideoSource.CAMERA);
 
         myMediaRecorder.setProfile(CamcorderProfile.get(CamcorderProfile.QUALITY_HIGH));
-
-        myMediaRecorder.setOutputFile(getOutputMediaFile(MEDIA_TYPE_VIDEO).toString());
+        if (getOutputMediaFile(MEDIA_VIDEO) == null){
+            Log.d(TAG, "Cannot get output file.");
+            return false;
+        }
+        myMediaRecorder.setOutputFile(getOutputMediaFile(MEDIA_VIDEO).toString());
 
         myMediaRecorder.setPreviewDisplay(myPreview.getHolder().getSurface());
 
@@ -153,11 +156,21 @@ public class CameraActivity extends Activity {
         }
     }
 
-    private static Uri getOutputMediaFileUri(int type) {
+    public boolean isExternalStorageWritable() {
+        String state = Environment.getExternalStorageState();
+        if (Environment.MEDIA_MOUNTED.equals(state)) {
+            return true;
+        }
+        return false;
+    }
+    private Uri getOutputMediaFileUri(int type) {
         return Uri.fromFile(getOutputMediaFile(type));
     }
 
-    private static File getOutputMediaFile(int type) {
+    private File getOutputMediaFile(int type) {
+        if(!isExternalStorageWritable()){
+            return null;
+        }
         File mediaStorageDir = new File(Environment.getExternalStoragePublicDirectory(
                 Environment.DIRECTORY_PICTURES), "Wideo");
         if (! mediaStorageDir.exists()) {
