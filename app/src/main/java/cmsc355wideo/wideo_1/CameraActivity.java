@@ -6,6 +6,8 @@ import static android.provider.MediaStore.Files.FileColumns.MEDIA_TYPE_VIDEO;
 import android.app.Activity;
 import android.content.Context;
 import android.content.pm.PackageManager;
+import android.graphics.drawable.Drawable;
+import android.graphics.drawable.TransitionDrawable;
 import android.hardware.Camera;
 import android.media.CamcorderProfile;
 import android.media.MediaRecorder;
@@ -16,6 +18,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.FrameLayout;
+import android.widget.ImageButton;
 
 import java.io.File;
 import java.io.IOException;
@@ -30,8 +33,6 @@ public class CameraActivity extends Activity {
     private CameraPreview myPreview;
     private MediaRecorder myMediaRecorder;
     private boolean isRecording = false;
-    private Button stop;
-    private Button record;
     public static final int MEDIA_VIDEO = 1;
 
     @Override
@@ -43,28 +44,29 @@ public class CameraActivity extends Activity {
         myPreview = new CameraPreview(this, myCamera);
         FrameLayout preview = (FrameLayout) findViewById(R.id.camera_preview);
         preview.addView(myPreview);
-        stop = (Button) findViewById(R.id.button_stop);
-        record = (Button) findViewById(R.id.button_capture);
+        ImageButton record = (ImageButton) findViewById(R.id.button_capture);
+        final TransitionDrawable drawable =(TransitionDrawable) record.getDrawable();
         record.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (isRecording) {
-                    stopRecording();
+                    myMediaRecorder.stop();
+                    releaseMediaRecorder();
+                    myCamera.lock();
+                    drawable.reverseTransition(0);
+                    isRecording = false;
                 } else {
                     if (prepareVideoRecorder()) {
-                        startRecording();
+                        myMediaRecorder.start();
+                        drawable.startTransition(0);
+                        isRecording = true;
                     } else {
                         releaseMediaRecorder();
                     }
                 }
             }
         });
-        stop.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v) {
-                stopRecording();
-            }
-        });
+
     }
 
     public void onPause() {
@@ -98,22 +100,6 @@ public class CameraActivity extends Activity {
             ex.printStackTrace();
         }
         return cam;
-    }
-
-    public void stopRecording(){
-        myMediaRecorder.stop();
-        releaseMediaRecorder();
-        myCamera.lock();
-        stop.setVisibility(View.GONE);
-        record.setVisibility(View.VISIBLE);
-        isRecording = false;
-    }
-
-    public void startRecording(){
-        myMediaRecorder.start();
-        stop.setVisibility(View.VISIBLE);
-        record.setVisibility(View.GONE);
-        isRecording = true;
     }
 
     private boolean prepareVideoRecorder() {
