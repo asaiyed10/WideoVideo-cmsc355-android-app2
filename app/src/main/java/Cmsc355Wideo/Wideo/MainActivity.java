@@ -8,6 +8,7 @@ import android.database.Cursor;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.provider.Contacts;
 import android.provider.ContactsContract;
 import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
@@ -45,6 +46,8 @@ public class MainActivity extends AppCompatActivity {
         buttonRecord.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Toast.makeText(MainActivity.this, "Launching Camera function",
+                        Toast.LENGTH_SHORT).show();
                 Intent camera = new Intent(MainActivity.this, CameraActivity.class);
                 startActivity(camera);
             }
@@ -52,6 +55,7 @@ public class MainActivity extends AppCompatActivity {
         buttonFriends.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Toast.makeText(MainActivity.this, "Opening Friend List", Toast.LENGTH_SHORT).show();
                 Intent flist = new Intent(Intent.ACTION_PICK,
                         ContactsContract.Contacts.CONTENT_URI);
                 startActivityForResult(flist,PICK_CONTACT);
@@ -61,8 +65,10 @@ public class MainActivity extends AppCompatActivity {
             @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP_MR1)
             @Override
             public void onClick(View view) {
+                Toast.makeText(MainActivity.this, "Opening Video Gallery",
+                        Toast.LENGTH_SHORT).show();
                 Intent gallery = new Intent();
-                gallery.setType("image/*");
+                gallery.setType("video/*");
                 gallery.setAction(Intent.ACTION_GET_CONTENT);
                 startActivityForResult(Intent.createChooser(gallery,"Select"),PICK_MEDIA);
             }
@@ -70,6 +76,7 @@ public class MainActivity extends AppCompatActivity {
         buttonSettings.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Toast.makeText(MainActivity.this, "Open Settings", Toast.LENGTH_SHORT).show();
                 Intent settings = new Intent(MainActivity.this, Settings.class);
                 startActivity(settings);
             }
@@ -105,6 +112,16 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
 
+            }
+        }
+        if (requestCode == PICK_MEDIA) {
+            if (resultCode == RESULT_OK) {
+                Uri videoUri = data.getData();
+                Intent playVideo = new Intent(Intent.ACTION_VIEW);
+                playVideo.setType("video/*");
+                playVideo.setData(videoUri);
+                Toast.makeText(this, "Playing Video", Toast.LENGTH_LONG).show();
+                startActivity(playVideo);
             }
         }
     }
