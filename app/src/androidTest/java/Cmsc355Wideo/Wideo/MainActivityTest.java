@@ -1,4 +1,5 @@
-package cmsc355Wideo.Wideo;
+package Cmsc355Wideo.Wideo;
+
 
 import android.support.test.espresso.ViewInteraction;
 import android.support.test.rule.ActivityTestRule;
@@ -7,8 +8,6 @@ import android.test.suitebuilder.annotation.LargeTest;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewParent;
-import android.widget.FrameLayout;
-import android.widget.LinearLayout;
 
 import org.hamcrest.Description;
 import org.hamcrest.Matcher;
@@ -18,7 +17,6 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
-import cmsc355Wideo.Wideo.MainActivity;
 import cmsc355Wideo.Wideo.R;
 
 import static android.support.test.espresso.Espresso.onView;
@@ -145,7 +143,7 @@ public class MainActivityTest {
                 allOf(withId(R.id.button720),
                         childAtPosition(
                                 childAtPosition(
-                                        IsInstanceOf.<View>instanceOf(ViewGroup.class),
+                                        IsInstanceOf.<View>instanceOf(android.view.ViewGroup.class),
                                         1),
                                 0),
                         isDisplayed()));
@@ -155,7 +153,7 @@ public class MainActivityTest {
                 allOf(withId(R.id.button1080),
                         childAtPosition(
                                 childAtPosition(
-                                        IsInstanceOf.<View>instanceOf(ViewGroup.class),
+                                        IsInstanceOf.<View>instanceOf(android.view.ViewGroup.class),
                                         1),
                                 1),
                         isDisplayed()));
@@ -165,7 +163,7 @@ public class MainActivityTest {
                 allOf(withId(R.id.button4k),
                         childAtPosition(
                                 childAtPosition(
-                                        IsInstanceOf.<View>instanceOf(ViewGroup.class),
+                                        IsInstanceOf.<View>instanceOf(android.view.ViewGroup.class),
                                         1),
                                 2),
                         isDisplayed()));
@@ -208,7 +206,7 @@ public class MainActivityTest {
 
         ViewInteraction frameLayout = onView(
                 allOf(childAtPosition(
-                        allOf(withId(com.android.internal.R.id.list_container),
+                        allOf(withId(com.android.contacts.R.id.list_container),
                                 childAtPosition(
                                         withId(android.R.id.content),
                                         0)),
@@ -219,9 +217,9 @@ public class MainActivityTest {
         ViewInteraction textView2 = onView(
                 allOf(withText("Choose a contact"),
                         childAtPosition(
-                                allOf(IsInstanceOf.<View>instanceOf(ViewGroup.class),
+                                allOf(IsInstanceOf.<View>instanceOf(android.view.ViewGroup.class),
                                         childAtPosition(
-                                                IsInstanceOf.<View>instanceOf(FrameLayout.class),
+                                                IsInstanceOf.<View>instanceOf(android.widget.FrameLayout.class),
                                                 0)),
                                 2),
                         isDisplayed()));
@@ -231,7 +229,7 @@ public class MainActivityTest {
                 allOf(withId(com.android.contacts.R.id.menu_search), withContentDescription("Search"),
                         childAtPosition(
                                 childAtPosition(
-                                        IsInstanceOf.<View>instanceOf(ViewGroup.class),
+                                        IsInstanceOf.<View>instanceOf(android.view.ViewGroup.class),
                                         3),
                                 0),
                         isDisplayed()));
@@ -240,9 +238,9 @@ public class MainActivityTest {
         ViewInteraction imageButton2 = onView(
                 allOf(withContentDescription("Navigate up"),
                         childAtPosition(
-                                allOf(IsInstanceOf.<View>instanceOf(ViewGroup.class),
+                                allOf(IsInstanceOf.<View>instanceOf(android.view.ViewGroup.class),
                                         childAtPosition(
-                                                IsInstanceOf.<View>instanceOf(FrameLayout.class),
+                                                IsInstanceOf.<View>instanceOf(android.widget.FrameLayout.class),
                                                 0)),
                                 0),
                         isDisplayed()));
@@ -253,7 +251,7 @@ public class MainActivityTest {
                         childAtPosition(
                                 allOf(withId(android.R.id.empty),
                                         childAtPosition(
-                                                IsInstanceOf.<View>instanceOf(LinearLayout.class),
+                                                IsInstanceOf.<View>instanceOf(android.widget.LinearLayout.class),
                                                 0)),
                                 0),
                         isDisplayed()));
@@ -274,7 +272,7 @@ public class MainActivityTest {
                         childAtPosition(
                                 allOf(withId(com.android.documentsui.R.id.toolbar),
                                         childAtPosition(
-                                                IsInstanceOf.<View>instanceOf(LinearLayout.class),
+                                                IsInstanceOf.<View>instanceOf(android.widget.LinearLayout.class),
                                                 0)),
                                 1),
                         isDisplayed()));
@@ -285,7 +283,7 @@ public class MainActivityTest {
                         childAtPosition(
                                 allOf(withId(com.android.documentsui.R.id.toolbar),
                                         childAtPosition(
-                                                IsInstanceOf.<View>instanceOf(LinearLayout.class),
+                                                IsInstanceOf.<View>instanceOf(android.widget.LinearLayout.class),
                                                 0)),
                                 0),
                         isDisplayed()));
@@ -305,7 +303,7 @@ public class MainActivityTest {
                 allOf(withId(android.R.id.title), withText("Gallery"),
                         childAtPosition(
                                 childAtPosition(
-                                        IsInstanceOf.<View>instanceOf(LinearLayout.class),
+                                        IsInstanceOf.<View>instanceOf(android.widget.LinearLayout.class),
                                         1),
                                 0),
                         isDisplayed()));
@@ -315,7 +313,7 @@ public class MainActivityTest {
                 allOf(withId(android.R.id.title), withText("SDCARD"),
                         childAtPosition(
                                 childAtPosition(
-                                        IsInstanceOf.<View>instanceOf(LinearLayout.class),
+                                        IsInstanceOf.<View>instanceOf(android.widget.LinearLayout.class),
                                         1),
                                 0),
                         isDisplayed()));
@@ -325,7 +323,7 @@ public class MainActivityTest {
                 allOf(withId(android.R.id.title), withText("Downloads"),
                         childAtPosition(
                                 childAtPosition(
-                                        IsInstanceOf.<View>instanceOf(LinearLayout.class),
+                                        IsInstanceOf.<View>instanceOf(android.widget.LinearLayout.class),
                                         1),
                                 0),
                         isDisplayed()));
@@ -335,7 +333,7 @@ public class MainActivityTest {
                 allOf(withId(android.R.id.title), withText("Recent"),
                         childAtPosition(
                                 childAtPosition(
-                                        IsInstanceOf.<View>instanceOf(LinearLayout.class),
+                                        IsInstanceOf.<View>instanceOf(android.widget.LinearLayout.class),
                                         1),
                                 0),
                         isDisplayed()));
