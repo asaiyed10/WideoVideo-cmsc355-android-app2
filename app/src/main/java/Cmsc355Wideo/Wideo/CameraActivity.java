@@ -1,12 +1,8 @@
-package cmsc355wideo.wideo_1;
+package cmsc355Wideo.Wideo;
 
 import static android.content.ContentValues.TAG;
-import static android.provider.MediaStore.Files.FileColumns.MEDIA_TYPE_VIDEO;
 
 import android.app.Activity;
-import android.content.Context;
-import android.content.pm.PackageManager;
-import android.graphics.drawable.Drawable;
 import android.graphics.drawable.TransitionDrawable;
 import android.hardware.Camera;
 import android.media.CamcorderProfile;
@@ -16,7 +12,6 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
 
@@ -45,7 +40,7 @@ public class CameraActivity extends Activity {
         FrameLayout preview = (FrameLayout) findViewById(R.id.camera_preview);
         preview.addView(myPreview);
         ImageButton record = (ImageButton) findViewById(R.id.button_capture);
-        final TransitionDrawable drawable =(TransitionDrawable) record.getDrawable();
+        final TransitionDrawable drawable = (TransitionDrawable) record.getDrawable();
         record.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -75,7 +70,7 @@ public class CameraActivity extends Activity {
         cameraRelease();
     }
 
-    public void onResume(){
+    public void onResume() {
         super.onResume();
         if (myCamera == null) {
             myCamera = getCameraInstance();
@@ -111,7 +106,7 @@ public class CameraActivity extends Activity {
         myMediaRecorder.setVideoSource(MediaRecorder.VideoSource.CAMERA);
 
         myMediaRecorder.setProfile(CamcorderProfile.get(CamcorderProfile.QUALITY_HIGH));
-        if (getOutputMediaFile(MEDIA_VIDEO) == null){
+        if (getOutputMediaFile(MEDIA_VIDEO) == null) {
             Log.d(TAG, "Cannot get output file.");
             return false;
         }
@@ -144,17 +139,15 @@ public class CameraActivity extends Activity {
 
     public boolean isExternalStorageWritable() {
         String state = Environment.getExternalStorageState();
-        if (Environment.MEDIA_MOUNTED.equals(state)) {
-            return true;
-        }
-        return false;
+        return Environment.MEDIA_MOUNTED.equals(state);
     }
+
     private Uri getOutputMediaFileUri(int type) {
         return Uri.fromFile(getOutputMediaFile(type));
     }
 
     private File getOutputMediaFile(int type) {
-        if(!isExternalStorageWritable()){
+        if (!isExternalStorageWritable()) {
             return null;
         }
         File mediaStorageDir = new File(Environment.getExternalStoragePublicDirectory(

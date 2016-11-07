@@ -1,10 +1,6 @@
-package cmsc355wideo.wideo_1;
+package cmsc355Wideo.Wideo;
 
-import android.support.test.espresso.ViewAssertion;
 import android.test.ActivityInstrumentationTestCase2;
-import android.view.View;
-
-import org.hamcrest.Matcher;
 
 import static android.support.test.espresso.Espresso.onView;
 import static android.support.test.espresso.assertion.ViewAssertions.matches;
@@ -16,11 +12,11 @@ import static android.support.test.espresso.matcher.ViewMatchers.withText;
  * Created by Ahmed on 10/10/16.
  */
 
-public class SettingsTest extends ActivityInstrumentationTestCase2<settings> {
+public class SettingsTest extends ActivityInstrumentationTestCase2<Settings> {
 
     public SettingsTest(){
 
-        super(settings.class);
+        super(Settings.class);
     }
 
     public void setUp() throws Exception {

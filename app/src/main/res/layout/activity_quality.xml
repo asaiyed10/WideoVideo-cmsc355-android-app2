@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context="cmsc355wideo.wideo_1.quality">
+    tools:context="cmsc355Wideo.Wideo.Quality">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"

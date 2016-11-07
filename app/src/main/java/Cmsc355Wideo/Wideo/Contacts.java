@@ -1,10 +1,12 @@
-package cmsc355wideo.wideo_1;
+package cmsc355Wideo.Wideo;
 
 import android.app.Activity;
 import android.content.ContentResolver;
 import android.database.Cursor;
+import android.os.Build;
 import android.os.Bundle;
 import android.provider.ContactsContract;
+import android.support.annotation.RequiresApi;
 import android.util.Log;
 
 
@@ -13,6 +15,7 @@ import android.util.Log;
  */
 
 public class Contacts extends Activity {
+    @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.contacts_list);

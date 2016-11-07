@@ -1,4 +1,4 @@
-package cmsc355wideo.wideo_1;
+package cmsc355Wideo.Wideo;
 
 import org.junit.Test;
 

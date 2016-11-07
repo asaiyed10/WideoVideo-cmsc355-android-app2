@@ -7,7 +7,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="cmsc355wideo.wideo_1.MainActivity">
+    tools:context="cmsc355Wideo.Wideo.MainActivity">
 
 
     <TextView

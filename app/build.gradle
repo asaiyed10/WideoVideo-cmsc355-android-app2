@@ -5,7 +5,7 @@ android {
     buildToolsVersion "24.0.2"
 
     defaultConfig {
-        applicationId "cmsc355wideo.wideo_1"
+        applicationId "cmsc355Wideo.Wideo"
         minSdkVersion 15
         targetSdkVersion 24
         versionCode 1
