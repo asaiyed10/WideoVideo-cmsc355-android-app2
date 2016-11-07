@@ -1,4 +1,4 @@
-package Cmsc355Wideo.Wideo;
+package cmsc355Wideo.Wideo;
 
 
         import android.support.v4.app.FragmentActivity;
