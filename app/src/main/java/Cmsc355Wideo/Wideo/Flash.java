@@ -1,4 +1,4 @@
-package cmsc355Wideo.Wideo;
+package Cmsc355Wideo.Wideo;
 
 import com.google.android.gms.common.api.GoogleApiClient;
 

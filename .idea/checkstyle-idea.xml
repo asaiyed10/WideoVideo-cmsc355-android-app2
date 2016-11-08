@@ -3,7 +3,6 @@
   <component name="CheckStyle-IDEA">
     <option name="configuration">
       <map>
-        <entry key="active-configuration" value="LOCAL_FILE:C:/Users/mantv/Documents/google_checks_relaxed.xml:CMSC355" />
         <entry key="location-0" value="LOCAL_FILE:C:/Users/mantv/Documents/google_checks_relaxed.xml:CMSC355" />
         <entry key="location-1" value="CLASSPATH:/sun_checks.xml:The default Checkstyle rules" />
         <entry key="scan-before-checkin" value="false" />

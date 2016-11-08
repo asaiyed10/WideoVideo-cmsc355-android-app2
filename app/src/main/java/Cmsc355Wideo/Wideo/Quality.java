@@ -1,4 +1,4 @@
-package cmsc355Wideo.Wideo;
+package Cmsc355Wideo.Wideo;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;

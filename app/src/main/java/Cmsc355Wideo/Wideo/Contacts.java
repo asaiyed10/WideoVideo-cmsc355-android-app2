@@ -1,4 +1,4 @@
-package cmsc355Wideo.Wideo;
+package Cmsc355Wideo.Wideo;
 
 import android.app.Activity;
 import android.content.ContentResolver;

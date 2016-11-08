@@ -7,7 +7,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="cmsc355Wideo.Wideo.Settings"
+    tools:context="Cmsc355Wideo.Wideo.Settings"
     tools:ignore="ExtraText">
     <Button
         android:layout_width="250dp"
@@ -57,6 +57,15 @@
         android:layout_alignLeft="@+id/buttons"
         android:layout_alignStart="@+id/buttons" />
 
+    <Button
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/buttonshare"
+        android:text="Share"
+        android:layout_below="@+id/buttona"
+        android:layout_alignLeft="@+id/buttona"
+        android:layout_alignStart="@+id/buttona"
+        android:layout_marginTop="21dp" />
 
 
 </RelativeLayout>

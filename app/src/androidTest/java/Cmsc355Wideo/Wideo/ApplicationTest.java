@@ -1,4 +1,4 @@
-package cmsc355Wideo.Wideo;
+package Cmsc355Wideo.Wideo;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

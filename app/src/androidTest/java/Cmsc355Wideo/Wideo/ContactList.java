@@ -1,4 +1,4 @@
-package cmsc355Wideo.Wideo;
+package Cmsc355Wideo.Wideo;
 
 import android.support.test.espresso.intent.rule.IntentsTestRule;
 
