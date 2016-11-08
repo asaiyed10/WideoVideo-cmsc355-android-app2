@@ -14,7 +14,7 @@ import static android.support.test.espresso.matcher.ViewMatchers.withText;
 
 public class SettingsTest extends ActivityInstrumentationTestCase2<Settings> {
 
-    public SettingsTest(){
+    public SettingsTest() {
 
         super(Settings.class);
     }
@@ -24,51 +24,58 @@ public class SettingsTest extends ActivityInstrumentationTestCase2<Settings> {
         getActivity();
     }
 
-    public void testQualityButtonIsDisplayed(){
-        onView(withId(R.id.buttonq) )
+    public void testQualityButtonIsDisplayed() {
+        onView(withId(R.id.buttonq))
                 .check(matches(isDisplayed()));
     }
 
-    public void testFlashButtonIsDisplayed(){
+    public void testFlashButtonIsDisplayed() {
         onView(withId(R.id.buttonf))
                 .check(matches(isDisplayed()));
     }
 
-    public void testStorageButtonIsDisplayed(){
+    public void testStorageButtonIsDisplayed() {
         onView(withId(R.id.buttons))
                 .check(matches(isDisplayed()));
     }
 
-    public void testVoiceButtonIsDisplayed(){
+    public void testVoiceButtonIsDisplayed() {
         onView(withId(R.id.buttonv))
                 .check(matches(isDisplayed()));
     }
 
-    public void testAboutButtonIsDisplayed(){
+    public void testAboutButtonIsDisplayed() {
         onView(withId(R.id.buttona))
                 .check(matches(isDisplayed()));
     }
 
-    public void testFlashIsCorrectText(){
+    public void testFlashIsCorrectText() {
         onView(withId(R.id.buttonf))
                 .check(matches(withText("flash")));
     }
 
-    public void testQualityIsCorrectText(){
+    public void testQualityIsCorrectText() {
         onView(withId(R.id.buttonq))
                 .check(matches(withText("quality")));
     }
-    public void testStorageIsCorrectText(){
+
+    public void testStorageIsCorrectText() {
         onView(withId(R.id.buttons))
                 .check(matches(withText("storage")));
     }
-    public void testVoiceIsCorrectText(){
+
+    public void testVoiceIsCorrectText() {
         onView(withId(R.id.buttonv))
                 .check(matches(withText("voice recognition")));
     }
-    public void testAboutIsCorrectText(){
+
+    public void testAboutIsCorrectText() {
         onView(withId(R.id.buttona))
                 .check(matches(withText("about us")));
     }
 
+    public void testShareIsCorrectText() {
+        onView(withId(R.id.buttonshare))
+                .check(matches(withText("share")));
+    }
 }
