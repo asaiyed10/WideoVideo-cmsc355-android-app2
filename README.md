@@ -1,6 +1,6 @@
-t# WideoVideo-cmsc355-android-app
+# WideoVideo-cmsc355-android-app
 
-Iterarion 1:
+Iteration 1:
 
 -In this iteration, we created the basic UI for our app. We can mostly navigate around the activities using the current UI. We will implement more functions to it in later iterations. 
 
