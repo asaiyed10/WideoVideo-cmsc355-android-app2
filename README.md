@@ -9,3 +9,7 @@ Iteration 1:
 -The settings activity doesn't change the camera's values yet. It contains the buttons for now. Since it isn't completed, we didn't close the user story 2, we will continue to work on it in later iterations.
 
 -The Espresso tests should be run individually. When bundled together, they don't run very well (may be it only happens on my emulator).
+
+Iteration 2 
+
+-Share button is working fine but our emulator doesnt have the share apps (Facebook, Dropbox, etc) that are supposed to show up on the screen when Share button is pressed. The tutorials that taught me the methods to do the share button did it in a similar way and it is working fine. Other than that, the share button code is working if it was on a real phone that has other sharing apps. 
