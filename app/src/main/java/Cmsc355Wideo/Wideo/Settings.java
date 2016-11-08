@@ -35,14 +35,14 @@ public class Settings extends AppCompatActivity {
         buttonQuality.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent quality = new Intent(Settings.this, cmsc355Wideo.Wideo.Quality.class);
+                Intent quality = new Intent(Settings.this, Cmsc355Wideo.Wideo.Quality.class);
                 startActivity(quality);
             }
         });
         buttonFlash.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent flash = new Intent(Settings.this, cmsc355Wideo.Wideo.Flash.class);
+                Intent flash = new Intent(Settings.this, Cmsc355Wideo.Wideo.Flash.class);
                 startActivity(flash);
             }
         });
@@ -57,12 +57,8 @@ public class Settings extends AppCompatActivity {
                 ShareIntent.putExtra(Intent.EXTRA_SUBJECT, shareSub);
                 ShareIntent.putExtra(Intent.EXTRA_TEXT, shareBody);
                 startActivity(Intent.createChooser(ShareIntent, "Share Using"));
-
             }
-
-            );
-
-        }
+        });
         // ATTENTION: This was auto-generated to implement the App Indexing API.
         // See https://g.co/AppIndexing/AndroidStudio for more information.
         client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
@@ -103,3 +99,4 @@ public class Settings extends AppCompatActivity {
         AppIndex.AppIndexApi.end(client, getIndexApiAction());
         client.disconnect();
     }
+}
