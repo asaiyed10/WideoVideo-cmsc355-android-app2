@@ -1,4 +1,4 @@
-package Cmsc355Wideo.Wideo;
+package cmsc355wideo.wideo;
 
 import android.app.Activity;
 import android.content.ContentResolver;
@@ -9,10 +9,6 @@ import android.provider.ContactsContract;
 import android.support.annotation.RequiresApi;
 import android.util.Log;
 
-
-/**
- * Created by Ahson and Ahmed on 10/7/16.
- */
 
 public class Contacts extends Activity {
     @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)

@@ -1,5 +1,4 @@
-package Cmsc355Wideo.Wideo;
-
+package cmsc355wideo.wideo;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.Button;

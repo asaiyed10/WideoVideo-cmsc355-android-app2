@@ -1,4 +1,4 @@
-package Cmsc355Wideo.Wideo;
+package cmsc355wideo.wideo;
 
 import static android.content.ContentValues.TAG;
 

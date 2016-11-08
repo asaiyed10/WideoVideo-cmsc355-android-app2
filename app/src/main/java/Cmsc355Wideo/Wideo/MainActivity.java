@@ -1,5 +1,4 @@
-package Cmsc355Wideo.Wideo;
-
+package cmsc355wideo.wideo;
 import com.google.android.gms.appindexing.AppIndex;
 import com.google.android.gms.common.api.GoogleApiClient;
 
@@ -37,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
         Button buttonSettings = (Button) findViewById(R.id.button3);
         Button buttonQuit = (Button) findViewById(R.id.button4);
         Button buttonFriends = (Button) findViewById(R.id.button5);
+        Button button_maps= (Button) findViewById(R.id.button6);
         buttonQuit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -104,6 +104,13 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(MainActivity.this, "Open Settings", Toast.LENGTH_SHORT).show();
                 Intent settings = new Intent(MainActivity.this, Settings.class);
                 startActivity(settings);
+            }
+        });
+        button_maps.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent maps = new Intent(MainActivity.this, MapsActivity.class);
+                startActivity(maps);
             }
         });
         // ATTENTION: This was auto-generated to implement the App Indexing API.

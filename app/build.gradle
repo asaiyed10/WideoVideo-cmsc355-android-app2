@@ -5,14 +5,22 @@ android {
     buildToolsVersion "24.0.2"
 
     defaultConfig {
-        applicationId "Cmsc355Wideo.Wideo"
+        applicationId "cmsc355wideo.wideo"
         minSdkVersion 15
         targetSdkVersion 24
         versionCode 1
         versionName "1.0"
         vectorDrawables.useSupportLibrary = true
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-
+        multiDexEnabled true
+        buildTypes {
+            debug {
+                debuggable true
+            }
+        }
+        dexOptions {
+            javaMaxHeapSize "2g"
+        }
     }
     buildTypes {
         release {
@@ -37,4 +45,9 @@ dependencies {
     compile 'com.android.support:support-vector-drawable:24.2.1'
     compile 'com.android.support:design:24.2.1'
     compile 'com.google.android.gms:play-services-appindexing:8.4.0'
+    compile 'com.google.android.gms:play-services-appindexing:8.1.0'
+    compile 'com.google.android.gms:play-services-maps:8.1.0'
+    compile 'com.google.android.gms:play-services:9.8.0'
+    compile 'com.android.support:multidex:1.0.0'
+    compile 'com.google.android.gms:play-services-analytics:8.3.0'
 }

@@ -1,5 +1,4 @@
-package Cmsc355Wideo.Wideo;
-
+package cmsc355wideo.wideo;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -35,14 +34,14 @@ public class Settings extends AppCompatActivity {
         buttonQuality.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent quality = new Intent(Settings.this, Cmsc355Wideo.Wideo.Quality.class);
+                Intent quality = new Intent(Settings.this, Quality.class);
                 startActivity(quality);
             }
         });
         buttonFlash.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent flash = new Intent(Settings.this, Cmsc355Wideo.Wideo.Flash.class);
+                Intent flash = new Intent(Settings.this, Flash.class);
                 startActivity(flash);
             }
         });
